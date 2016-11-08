@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     charlock_holmes (0.6.9.4)
+    charlock_holmes_bundle_icu (0.6.9.2)
     diff-lcs (1.2.5)
     github-markdown (0.6.4)
     github-markup (0.7.5)
@@ -49,5 +50,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  charlock_holmes_bundle_icu (~> 0.6.9.2)
   github-markdown
   gollum
+
+BUNDLED WITH
+   1.12.5
