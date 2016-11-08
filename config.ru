@@ -17,7 +17,7 @@ require 'rubygems'
 require 'gollum/app'
 
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
-  [username, password] == [ENV['user'], pass: ENV['pass']]
+  [username, password] == ["meneldur", pass: "toto"]
 end
 
 gollum_path = '.'
