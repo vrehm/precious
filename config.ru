@@ -16,8 +16,15 @@
 require 'rubygems'
 require 'gollum/app'
 
+auth_config_path = "secret.yml"
+if File.exists?(auth_config_path)
+  AUTH_CONFIG = YAML.load_file(auth_config_path)
+else
+  AUTH_CONFIG = {user: ENV['user'], pass: ENV['pass']}
+end
+
 use Rack::Auth::Basic, "Restricted Area" do |username, password|
-  [username, password] == ["meneldur", pass: "toto"]
+  [username, password] == [ENV['user'], ENV['pass']]
 end
 
 gollum_path = '.'
