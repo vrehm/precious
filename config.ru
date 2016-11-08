@@ -16,6 +16,10 @@
 require 'rubygems'
 require 'gollum/app'
 
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  [username, password] == ['admin', 'admin']
+end
+
 gollum_path = '.'
 
 # This is the key to make Gollum work on Heroku
